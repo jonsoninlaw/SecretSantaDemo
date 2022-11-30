@@ -1,14 +1,31 @@
 <template>
-  <div class="admin">
-    <div>
-      <label>
-        Nom
-        <input v-model="name" />
-      </label>
+  <div class="flex flex-col items-center w-full xmas">
+    <div class="flex flex-col items-stretch justify-center mb-8">
+      <input
+        @keyup.enter="addUser"
+        type="text"
+        class="flex items-center w-full px-4 mb-2 leading-normal text-gray-700 border rounded-lg shadow appearance-none h-11 focus:outline-none focus:shadow-outline"
+        v-model="userName"
+      /><button
+        @click="addUser"
+        class="flex items-center w-full px-6 text-white bg-green-800 rounded-lg h-11 hover:bg-green-600 focus:outline-none"
+      >
+        Ajouter un participant
+      </button>
     </div>
-    <button @click="addUser()">Ajouter un participant</button>
-    <div>
-      <div v-for="user in users" :key="user.name">{{ user.name }}</div>
+    <div>Participants :</div>
+    <div class="w-40 mt-4">
+      <div
+        v-for="user of users"
+        :key="user.id"
+        class="flex justify-between w-full my-2"
+      >
+        <div class="flex">
+          <div class="font-bold">
+            {{ user.name }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
