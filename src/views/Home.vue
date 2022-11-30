@@ -225,3 +225,9 @@ async function draw() {
   }
 }
 </script>
+
+<style>
+body {
+  background-color: #e40a2d;
+}
+</style>
